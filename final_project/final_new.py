@@ -1,0 +1,71 @@
+"""Importing"""
+import random
+import sys
+import lang_engine
+
+
+language_list = ["angielski", "niemiecki", "polish", "german", "polnisch", "englisch"]
+word_list: list = []
+typed_lang_study: list = []
+def main():
+    """Main program"""
+    while True:
+        language = input("Choose your language: polski, english or deutsch: ").lower()
+        learn_lang = input(check_language(language)).lower()
+        try:
+            with open(chosen_lang(learn_lang)[0], "r", encoding="utf-8") as file_level:
+                for line in file_level:
+                    line = line.lower()
+                    pl, eng, de = line.strip().split(",")
+                    word_list.append({"pl":pl, "eng":eng, "de":de})
+        except (NameError, TypeError):
+            print("You need to select the program language: polski, english or deutsch\n"
+                  "Musisz wybrać język programu: polski, english lub deutsch\n"
+                  "Sie müssen die Programmsprache auswählen: polski, english oder deutsch")
+            continue
+        else:
+            break
+    lang_selection(language)
+
+def check_language(language):
+    """check chosen language and run proper"""
+    translate = {
+                 "pl":"Jakiego języka chcesz się uczyć? angielski lub niemiecki?: ",
+                 "eng":"Which language would you like to learn? polish or german?: ",
+                 "de":"Welches Sprache möchtest du lernen? polnisch oder englisch?: "
+                 }
+    if language == "polski":
+        return translate["pl"]
+    if language == "english":
+        return translate["eng"]
+    if language == "deutsch":
+        return translate["de"]
+    if language == "exit program":
+        lang_engine.exit_program()
+    return None #<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<BYĆ MOZE DOPRACOWAC ERROR ZEBY KOMUNIKAT BYL?
+
+def chosen_lang(learn_lang):
+    """Checking and choosing proper file with words and translations"""
+    if learn_lang in language_list:
+        typed_lang_study.append(learn_lang)
+        file_level = "final_project/test.csv"
+        return file_level, typed_lang_study
+    if learn_lang == "exit program":
+        lang_engine.exit_program()
+    return None
+
+#Dopracować resztę języków - PL - OK 
+
+def lang_selection(language):
+    """Chosing proper program function depends of chosen program language and runs the target program(function)"""
+    if language == "polski":
+        return lang_engine.pol_lang(typed_lang_study, word_list)
+    if language == "english":
+        return lang_engine.eng_lang()
+    if language == "deutsch":
+        return lang_engine.de_lang()
+    return None
+        
+        
+if __name__ == "__main__":
+    main()

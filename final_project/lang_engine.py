@@ -2,21 +2,23 @@
 import random
 import sys
 
-
-word_list: list = []
-typed_lang_study: list = []
+def main():
+    pass
 
 def exit_program():
     """Exit program function"""
     print("Exiting the program...")
     sys.exit(0)
 
-def pol_lang():
+#dopracować inne języki - PL OK
+
+def pol_lang(typed_lang_study, words):
     """Shuffling and printing pair of words to print, scoring - ONLY LANGUAGE POLISH"""
     score = 0
-    total_points = len(word_list)
+    total_points = len(words)
+    word_list: list = words
     if "angielski" in typed_lang_study:
-        while word_list:
+        while words:
             for pair_word in word_list.copy():
                 random.shuffle(word_list)
                 pl_word = pair_word["pl"]
@@ -127,3 +129,6 @@ def de_lang():
                     print(f"Richtiges Wort '{de_word}'")
         return print("Alle Wörter richtig übersetzt, Glückwunsch!"), exit_program()
     return None
+
+if __name__ == "__main__":
+    main()
