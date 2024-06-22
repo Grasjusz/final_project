@@ -10,15 +10,13 @@ def exit_program():
     print("Exiting the program...")
     sys.exit(0)
 
-#dopracować inne języki - PL OK
-
 def pol_lang(typed_lang_study, words):
     """Shuffling and printing pair of words to print, scoring - ONLY LANGUAGE POLISH"""
     score = 0
-    total_points = len(words)
     word_list: list = words
+    total_points = len(word_list)
     if "angielski" in typed_lang_study:
-        while words:
+        while word_list:
             for pair_word in word_list.copy():
                 random.shuffle(word_list)
                 pl_word = pair_word["pl"]
@@ -52,9 +50,10 @@ def pol_lang(typed_lang_study, words):
         return print("Wszystkie słowa poprawnie przetłumaczone, gratulacje!"), exit_program()
     return None
 
-def eng_lang():
+def eng_lang(typed_lang_study, words):
     """Shuffling and printing pair of words to print, scoring - ONLY LANGUAGE ENGLISH"""
     score = 0
+    word_list: list = words
     total_points = len(word_list)
     if "polish" in typed_lang_study:
         while word_list:
@@ -91,9 +90,10 @@ def eng_lang():
         return print("All words translated correctly, congratulations!"), exit_program()
     return None
 
-def de_lang():
+def de_lang(typed_lang_study, words):
     """Shuffling and printing pair of words to print, scoring - ONLY LANGUAGE GERMAN"""
     score = 0
+    word_list: list = words
     total_points = len(word_list)
     if "polnisch" in typed_lang_study:
         while word_list:
