@@ -6,7 +6,7 @@ language_list = ["angielski", "niemiecki", "polish", "german", "polnisch", "engl
 word_list: list = []
 typed_lang_study: list = []
 def main():
-    """Main program"""
+    """Main program, starting, choosing langugae, handling error"""
     while True:
         language = input("Choose your language: polski, english or deutsch: ").lower()
         learn_lang = input(check_language(language)).lower()
@@ -46,7 +46,7 @@ def chosen_lang(learn_lang):
     """Checking and choosing proper file with words and translations"""
     if learn_lang in language_list:
         typed_lang_study.append(learn_lang)
-        file_level = "final_project/level1.csv"
+        file_level = "final_project/test.csv"
         return file_level, typed_lang_study
     if learn_lang == "exit program":
         lang_engine.exit_program()
