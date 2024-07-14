@@ -1,5 +1,5 @@
 """Importing"""
-import lang_engine
+import lang_engine, sys
 
 
 language_list = ["angielski", "niemiecki", "polish", "german", "polnisch", "englisch"]
@@ -39,7 +39,7 @@ def check_language(language):
     if language == "deutsch":
         return translate["de"]
     if language == "exit program":
-        lang_engine.exit_program()
+        exit_program()
     return "Try again, press any key..."
 
 def chosen_lang(learn_lang):
@@ -49,7 +49,7 @@ def chosen_lang(learn_lang):
         file_level = "final_project/test.csv"
         return file_level, typed_lang_study
     if learn_lang == "exit program":
-        lang_engine.exit_program()
+        exit_program()
     return None
 
 def lang_selection(language):
@@ -61,7 +61,13 @@ def lang_selection(language):
     if language == "deutsch":
         return lang_engine.de_lang(typed_lang_study, word_list)
     return None
+
+def exit_program():
+    """Exit program function"""
+    print("Exiting the program...")
+    sys.exit(0)
         
         
 if __name__ == "__main__":
     main()
+    
