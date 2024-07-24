@@ -34,6 +34,11 @@
             - exit_program - printing succesfully exited program and return exit code _0_ meaning exited OK.
         
         __lang_engine.py__ - the longest in code, but fairly simple. Printing, counting, shuffling, essentialy the engine.
-        - main - debugging purposes.
-        - exit_program - printing succesfully exited program and return exit code _0_ meaning exited OK.
-        - pol_lang - first it will randomly shuffle the word list, print the word to be translated, if successful, print the points gained, continue with another word. If false, prints the translated word and goes to another word in the list. If all words in the list have been translated, a message will be displayed that all words have been translated and the program will automatically exit.
+            - main - debugging purposes.
+            - exit_program - printing succesfully exited program and return exit code _0_ meaning exited OK.
+            - pol_lang - first it will randomly shuffle the word list, next print the word to be translated, if successful, print the points gained, continue with another word. If false, prints the translated word and goes to another word in the list. If all words in the list have been translated, a message will be displayed that all words have been translated and the program will automatically exit. __Designed for polish language user interface.__
+            - eng_lang - first it will randomly shuffle the word list, next print the word to be translated, if successful, print the points gained, continue with another word. If false, prints the translated word and goes to another word in the list. If all words in the list have been translated, a message will be displayed that all words have been translated and the program will automatically exit. __Designed for english language user interface.__
+            - de_lang - first it will randomly shuffle the word list, next print the word to be translated, if successful, print the points gained, continue with another word. If false, prints the translated word and goes to another word in the list. If all words in the list have been translated, a message will be displayed that all words have been translated and the program will automatically exit. __Designed for german language user interface.__
+
+        __test_project.py__ - testing chosen functions for proper or invalid input.
+            - test_exit - testing if exiting is a SystemExit and if the value code is "0"
