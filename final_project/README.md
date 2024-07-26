@@ -42,3 +42,15 @@
 
         __test_project.py__ - testing chosen functions for proper or invalid input.
             - test_exit - testing if exiting is a SystemExit and if the value code is "0"
+            - test_check_language - testing if output is in proper language
+            - test_check_language_error - checking handling error if entered word, numbers, blank
+            - test_chosen_lang - testing base of words if specyfied file
+            - test_lang_selection_different_input - test if different input return value or None (as should) 
+    
+        __level1.csv__ - this is a CSV data file, the CSV file type chosen for its flexibility and better program update and word list update.
+
+        __test.csv__ - file with 3 words for testing purposes
+
+     Program is partitioned in two parts _project.py_ - main program, _lang_engine.py_ - program for printig and counting words to translate.
+
+     I have chosen this way for better readability and less messy code in one file.
