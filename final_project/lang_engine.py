@@ -17,7 +17,7 @@ def pol_lang(typed_lang_study, words):
     total_points = len(word_list)
     if "angielski" in typed_lang_study:
         while word_list:
-            for pair_word in word_list.copy():
+            for pair_word in word_list:
                 random.shuffle(word_list)
                 pl_word = pair_word["pl"]
                 eng_word = pair_word["eng"]
@@ -34,7 +34,7 @@ def pol_lang(typed_lang_study, words):
 
     if "niemiecki" in typed_lang_study:
         while word_list:
-            for pair_word in word_list.copy():
+            for pair_word in word_list:
                 random.shuffle(word_list)
                 pl_word = pair_word["pl"]
                 de_word = pair_word["de"]
@@ -57,7 +57,7 @@ def eng_lang(typed_lang_study, words):
     total_points = len(word_list)
     if "polish" in typed_lang_study:
         while word_list:
-            for pair_word in word_list.copy():
+            for pair_word in word_list:
                 random.shuffle(word_list)
                 pl_word = pair_word["pl"]
                 eng_word = pair_word["eng"]
@@ -74,12 +74,12 @@ def eng_lang(typed_lang_study, words):
 
     if "german" in typed_lang_study:
         while word_list:
-            for pair_word in word_list.copy():
+            for pair_word in word_list:
                 random.shuffle(word_list)
                 eng_word = pair_word["eng"]
                 de_word = pair_word["de"]
                 answer = input(f"The translate for word '{de_word}' is: ").lower()
-                if answer == pl_word:
+                if answer == eng_word:
                     word_list.remove(pair_word)
                     score += 1
                     print(f"Your actual score {score} out of {total_points} points")
@@ -97,7 +97,7 @@ def de_lang(typed_lang_study, words):
     total_points = len(word_list)
     if "polnisch" in typed_lang_study:
         while word_list:
-            for pair_word in word_list.copy():
+            for pair_word in word_list:
                 random.shuffle(word_list)
                 pl_word = pair_word["pl"]
                 de_word = pair_word["de"]
@@ -114,7 +114,7 @@ def de_lang(typed_lang_study, words):
 
     if "englisch" in typed_lang_study:
         while word_list:
-            for pair_word in word_list.copy():
+            for pair_word in word_list:
                 random.shuffle(word_list)
                 eng_word = pair_word["eng"]
                 de_word = pair_word["de"]
