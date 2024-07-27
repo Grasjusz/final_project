@@ -46,7 +46,7 @@ def chosen_lang(learn_lang):
     """Checking and choosing proper file with words and translations"""
     if learn_lang in language_list:
         typed_lang_study.append(learn_lang)
-        file_level = "final_project/test.csv"
+        file_level = "level1.csv"
         return file_level, typed_lang_study
     if learn_lang == "exit program":
         exit_program()

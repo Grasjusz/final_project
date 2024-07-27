@@ -25,7 +25,7 @@ def test_check_language_error():
     assert check_language("test") == 'Try again, press any key...'
     
 def test_chosen_lang():
-    file_level = "final_project/test.csv"
+    file_level = "level1ś.csv"
     assert chosen_lang("angielski")[0] == (file_level)
     
     
