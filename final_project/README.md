@@ -60,6 +60,6 @@
 
      ### Program is partitioned in two parts _project.py_ - main program, _lang_engine.py_ - program for printig and counting words to translate.
 
-     I have chosen this way for better readability and less messy code in one file. Main functions and program goes with project.py.
-     lang_engine is the "engine" for proper printing and counting words.
+        I have chosen this way of structure for better readability and less messy code in one file. Main functions and program goes with project.py. lang_engine is the "engine" for proper printing and counting words.
+
 
